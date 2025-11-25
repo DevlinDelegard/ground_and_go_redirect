@@ -9,7 +9,7 @@
   <p>Redirecting to the app...</p>
   <script>
     const params = new URLSearchParams(window.location.search);
-    const accessToken = params.get('access_token');
+    const accessToken = params.get('token');
     const refreshToken = params.get('refresh_token');
     const type = params.get('type');
     
@@ -24,7 +24,7 @@
       const appLink = `ground_and_go://auth-callback?access_token=${encodeURIComponent(accessToken)}&refresh_token=${encodeURIComponent(refreshToken)}&type=${encodeURIComponent(type)}`;
       window.location.href = appLink;
     } else {
-      //document.body.innerText = "Invalid or missing token.";
+      document.body.innerText = "Invalid or missing token.";
     }
   </script>
 </body>

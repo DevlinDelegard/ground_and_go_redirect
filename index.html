@@ -14,13 +14,15 @@
   const token = params.get('token');
   const type = params.get('type');
 
+  document.body.innerHTML = "Stuff:\ntoken\ntype";
+
   if (token && type) {
     // Construct deep link
     const appUrl = `ground_and_go://auth?token=${encodeURIComponent(token)}&type=${encodeURIComponent(type)}`;
     // Redirect to app
     window.location.href = appUrl;
   } else {
-    document.body.innerHTML = "<h3>Invalid link</h3>";
+    
   }
 </script>
 

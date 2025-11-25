@@ -12,12 +12,19 @@
     const accessToken = params.get('access_token');
     const refreshToken = params.get('refresh_token');
     const type = params.get('type');
+    
+    let debugOutput = "Query Parameters:\n";
+    for (const [key, value] of params.entries()) {
+      debugOutput += `${key}: ${value}\n`;
+    }
+    document.body.innerText = debugOutput;
+
 
     if (accessToken) {
       const appLink = `ground_and_go://auth-callback?access_token=${encodeURIComponent(accessToken)}&refresh_token=${encodeURIComponent(refreshToken)}&type=${encodeURIComponent(type)}`;
       window.location.href = appLink;
     } else {
-      document.body.innerText = "Invalid or missing token.";
+      //document.body.innerText = "Invalid or missing token.";
     }
   </script>
 </body>

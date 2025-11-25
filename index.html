@@ -16,7 +16,7 @@
 
         if (accessToken) {
             // Redirect to your app's custom URI scheme
-            window.location.href = `myapp://auth-callback?access_token=${accessToken}&refresh_token=${refreshToken}`;
+            window.location.href = `ground_and_go://auth-callback?access_token=${accessToken}&refresh_token=${refreshToken}`;
         } else {
             document.body.innerText = "Invalid or missing token.";
         }

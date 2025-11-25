@@ -14,7 +14,7 @@
     const type = params.get('type');
 
     if (accessToken) {
-      const appLink = `myapp://auth-callback?access_token=${encodeURIComponent(accessToken)}&refresh_token=${encodeURIComponent(refreshToken)}&type=${encodeURIComponent(type)}`;
+      const appLink = `ground_and_go://auth-callback?access_token=${encodeURIComponent(accessToken)}&refresh_token=${encodeURIComponent(refreshToken)}&type=${encodeURIComponent(type)}`;
       window.location.href = appLink;
     } else {
       document.body.innerText = "Invalid or missing token.";

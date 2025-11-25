@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+</head>
+
+<body>
+    <p>Redirecting to the app...</p>
+    <script>
+        // Extract query params from Supabase link
+        const params = new URLSearchParams(window.location.search);
+        const accessToken = params.get('access_token');
+        const refreshToken = params.get('refresh_token');
+
+        if (accessToken) {
+            // Redirect to your app's custom URI scheme
+            window.location.href = `myapp://auth-callback?access_token=${accessToken}&refresh_token=${refreshToken}`;
+        } else {
+            document.body.innerText = "Invalid or missing token.";
+        }
+    </script>
+</body>
+
+</html>

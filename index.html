@@ -17,7 +17,7 @@
 
   if (token && type) {
     // Construct deep link
-    const appUrl = `https://www.facebook.com/`;
+    const appUrl = `groundandgo://auth-callback?token=${encodeURIComponent(token)}&type=${encodeURIComponent(type)}`;
     // Redirect to app
     window.location.href = appUrl;
   } else {

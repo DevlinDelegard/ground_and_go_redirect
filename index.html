@@ -12,11 +12,8 @@
   // Parse query params
   const hash = window.location.hash.substring(1);
   const params = new URLSearchParams(hash);
-  const accessToken = params.get('access_token');
-  const token = params.get('token');
+  const token = params.get('access_token');
   const type = params.get('type');
-
-  document.body.innerHTML = "Access Token: " + accessToken + " Token: " + token + " Type: " + type;
 
   if (token && type) {
     // Construct deep link
@@ -24,7 +21,7 @@
     // Redirect to app
     window.location.href = appUrl;
   } else {
-    
+    document.body.innerHTML = "The link is either invalid or expired.";
   }
 </script>
 

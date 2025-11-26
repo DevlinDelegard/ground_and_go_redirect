@@ -13,11 +13,12 @@
   const hash = window.location.hash.substring(1);
   const params = new URLSearchParams(hash);
   const token = params.get('access_token');
+  const refreshToken = params.get('refresh_token');
   const type = params.get('type');
 
   if (token && type) {
     // Construct deep link
-    const appUrl = `groundandgo://auth-callback?token=${encodeURIComponent(token)}&type=${encodeURIComponent(type)}`;
+    const appUrl = `groundandgo://auth-callback?token=${encodeURIComponent(token)}&type=${encodeURIComponent(type)}&refresh_token=${encodeURIComponent(refreshToken ?? '')}`;
     // Redirect to app
     window.location.href = appUrl;
   } else {

@@ -17,7 +17,7 @@
 
   if (token && type) {
     // Construct deep link
-    const appUrl = `groundandgo://auth-callback?token=${encodeURIComponent(token)}&type=${encodeURIComponent(type)}`;
+    const appUrl = `groundandgo://auth-callback?type=${encodeURIComponent(type)}`;
     // Redirect to app
     window.location.href = appUrl;
   } else {
